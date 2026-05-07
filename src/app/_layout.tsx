@@ -7,7 +7,7 @@ import { Platform, View, StyleSheet, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 import { Slot } from 'expo-router';
-
+import { SideNavigation } from '@/components/SideNavigation';
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 
 
@@ -23,7 +23,7 @@ export default function RootLayout() {
                 {/* Main TV Layout Structure */}
                 <View style={styles.tvContainer}>
                     <View style={styles.sideNavPlaceholder}>
-                        {/* <SideNavigation /> */}
+                        <SideNavigation />
                     </View>
 
                     <View style={styles.mainContent}>
