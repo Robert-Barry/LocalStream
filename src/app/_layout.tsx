@@ -5,16 +5,27 @@ import {
 } from '@react-navigation/native';
 import { Platform, View, StyleSheet, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import React from 'react';
+import React, { useState } from 'react';
 import { Slot } from 'expo-router';
 import { SideNavigation } from '@/components/SideNavigation';
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+const queryClientOptions = {
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+            staleTime: 1000 * 60 * 5 // Data is fresh for 5 minutes before refreshing
+        }
+    }
+}
 
 export default function RootLayout() {
+    const [queryClient] = useState(() => new QueryClient(queryClientOptions));
     const colorScheme = useColorScheme();
 
     return (
+        <QueryClientProvider client={queryClient}>
         <SafeAreaProvider>
             {/* SafeAreaProvider communicates with TV's layout engine */}
             <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
@@ -33,6 +44,7 @@ export default function RootLayout() {
                 </View>
             </ThemeProvider>
         </SafeAreaProvider>
+        </QueryClientProvider>
     );
 }
 
