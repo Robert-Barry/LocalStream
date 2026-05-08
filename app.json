@@ -4,7 +4,8 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.anonymous.LocalStream"
     },
     "android": {
       "adaptiveIcon": {
@@ -13,7 +14,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.LocalStream"
     },
     "web": {
       "output": "static",
@@ -34,6 +36,8 @@
       [
         "@react-native-tvos/config-tv",
         {
+          "isTV": true,
+          "tvosDeploymentTarget": "13.4",
           "androidTVBanner": "./assets/tv_icons/icon-400x240.png",
           "androidTVIcon": "./assets/tv_icons/icon-760x760.png",
           "appleTVImages": {
