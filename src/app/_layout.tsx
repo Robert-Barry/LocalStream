@@ -26,24 +26,24 @@ export default function RootLayout() {
 
     return (
         <QueryClientProvider client={queryClient}>
-        <SafeAreaProvider>
-            {/* SafeAreaProvider communicates with TV's layout engine */}
-            <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-                { Platform.OS === 'ios' || !Platform.isTV ? <AnimatedSplashOverlay /> : null }
+            <SafeAreaProvider>
+                {/* SafeAreaProvider communicates with TV's layout engine */}
+                <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+                    { Platform.OS === 'ios' || !Platform.isTV ? <AnimatedSplashOverlay /> : null }
 
-                {/* Main TV Layout Structure */}
-                <View style={styles.tvContainer}>
-                    <View style={styles.sideNavPlaceholder}>
-                        <SideNavigation />
-                    </View>
+                    {/* Main TV Layout Structure */}
+                    <View style={styles.tvContainer}>
+                        <View style={styles.sideNavPlaceholder}>
+                            <SideNavigation />
+                        </View>
 
-                    <View style={styles.mainContent}>
-                        {/* Slot renders the current page based on the route */}
-                        <Slot />
+                        <View style={styles.mainContent}>
+                            {/* Slot renders the current page based on the route */}
+                            <Slot />
+                        </View>
                     </View>
-                </View>
-            </ThemeProvider>
-        </SafeAreaProvider>
+                </ThemeProvider>
+            </SafeAreaProvider>
         </QueryClientProvider>
     );
 }
