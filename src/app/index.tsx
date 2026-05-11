@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
@@ -7,8 +7,21 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
 import { useScreenDimensions } from '@/hooks/use-screen-dimensions';
+import { VideoCarousel } from '@/components/VideoCarousel';
+import { MOCK_VIDEOS } from './utils/MockData'
 
 export default function HomeScreen() {
+  const styles = useHomeStyles();
+  return (
+    <ThemedView style={styles.container}>
+      <SafeAreaView style={styles.safeArea}>
+        <VideoCarousel title="Videos" videos={MOCK_VIDEOS}/>
+      </SafeAreaView>
+    </ThemedView>
+  )
+}
+
+  /*
   const styles = useHomeStyles();
   return (
     <ThemedView style={styles.container}>
@@ -39,7 +52,7 @@ export default function HomeScreen() {
     </ThemedView>
   );
 }
-
+*/
 const useHomeStyles = () => {
   const { spacing, width, landscape } = useScreenDimensions();
 
