@@ -30,11 +30,12 @@ type NavItem = {
                     console.log(`User pressed select on: ${item.label}`);
                 }}
                 >
-                    {({ focused }) => {
+                    {({ focused }) => (
                         <View style={styles.iconContainer}>
                             <Text style={styles.icon}>{item.icon}</Text>
                         </View>
-                    }}
+                    )   
+                    }
                 </Pressable>
             ))}
         </View>
@@ -49,7 +50,7 @@ type NavItem = {
         gap: 20
     },
     navItem: {
-        width: 40,
+        width: 60,
         height: 60,
         borderRadius: 30,
         backgroundColor: '#222',
