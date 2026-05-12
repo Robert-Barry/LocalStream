@@ -1,6 +1,8 @@
 import { Video } from '../app/store/useAppStore';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { VideoCard } from './VideoCard';
+import { useRouter } from 'expo-router';
+
 
 interface VideoCarouselProps {
     title: string;
@@ -8,6 +10,8 @@ interface VideoCarouselProps {
 }
 
 export const VideoCarousel = ({title, videos}: VideoCarouselProps) => {
+    const router = useRouter();
+
     return (
         <View style={styles.container}>
             <Text style={styles.titleText}>{title}</Text>
@@ -19,7 +23,7 @@ export const VideoCarousel = ({title, videos}: VideoCarouselProps) => {
                 maxToRenderPerBatch={4}
                 windowSize={5}
                 showsHorizontalScrollIndicator={false}
-                renderItem={({ item }) => <VideoCard video={item} onPress={() => console.log('Video selected')} />}
+                renderItem={({ item }) => <VideoCard video={item} onPress={(video) => router.navigate(`/video/${video.id}`)} />}
                 keyExtractor={(item) => item.id}
             />
         </View>
