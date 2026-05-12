@@ -10,12 +10,15 @@ import { useScreenDimensions } from '@/hooks/use-screen-dimensions';
 import { VideoCarousel } from '@/components/VideoCarousel';
 import { MOCK_VIDEOS } from './utils/MockData'
 
+
 export default function HomeScreen() {
   const styles = useHomeStyles();
+
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-        <VideoCarousel title="Videos" videos={MOCK_VIDEOS}/>
+        <VideoCarousel title="Videos" videos={MOCK_VIDEOS} />
       </SafeAreaView>
     </ThemedView>
   )
