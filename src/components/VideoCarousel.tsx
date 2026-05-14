@@ -32,7 +32,7 @@ export const VideoCarousel = ({title, videos}: VideoCarouselProps) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#000'
+        backgroundColor: '#000',
     },
     titleText: {
         color: '#fff',
