@@ -47,7 +47,8 @@ type NavItem = {
         flex: 1,
         paddingVertical: 40,
         alignItems: 'center',
-        gap: 20
+        gap: 20,
+        marginTop: 120,
     },
     navItem: {
         width: 60,

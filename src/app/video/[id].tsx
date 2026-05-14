@@ -2,9 +2,12 @@ import { useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { useVideoPlayer, VideoView } from "expo-video";
 import { MOCK_VIDEOS } from "../utils/MockData";
+import { useFocusEffect } from "expo-router";
+import { useCallback } from "react";
 
 export default function VideoDetails() {
     const { id } = useLocalSearchParams();
+    
 
     // Find the video
     const video = MOCK_VIDEOS.find((video) => video.id === id);

@@ -6,7 +6,7 @@ import {
 import { Platform, View, StyleSheet, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { useState } from 'react';
-import { Slot } from 'expo-router';
+import { Stack } from 'expo-router';
 import { SideNavigation } from '@/components/SideNavigation';
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -39,7 +39,7 @@ export default function RootLayout() {
 
                         <View style={styles.mainContent}>
                             {/* Slot renders the current page based on the route */}
-                            <Slot />
+                            <Stack screenOptions={{ headerShown: false }} />
                         </View>
                     </View>
                 </ThemeProvider>
