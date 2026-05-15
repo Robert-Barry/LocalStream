@@ -29,7 +29,9 @@ export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
         <View style={styles.errorContainer}>
             <Text style={styles.textWrong}>Something went wrong.</Text>
             <Text style={styles.textError}>{error.message}</Text>
-            <Pressable style={styles.buttonRetry} onPress={retry}>Try Again</Pressable>
+            <Pressable style={styles.buttonRetry} onPress={retry}>
+                <Text style={styles.textTryAgain}>Try Again</Text>
+            </Pressable>
         </View>
     )
 }
@@ -87,6 +89,9 @@ const styles = StyleSheet.create({
         flex: 1
     },
     errorContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: '#000',
     },
     textWrong: {
@@ -98,12 +103,22 @@ const styles = StyleSheet.create({
     textError: {
         color: '#fff',
         fontSize: 32,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 20
+    },
+    textTryAgain: {
+        color: '#fff',
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
     buttonRetry: {
         paddingHorizontal: 10,
         paddingVertical: 8,
         backgroundColor: 'red',
-        borderRadius: 8
+        borderRadius: 8,
+        width: 300,
+        alignContent: 'center'
     }
 });

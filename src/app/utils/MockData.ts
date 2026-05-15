@@ -5,7 +5,7 @@ export const MOCK_VIDEOS: Video[] = [
         id: '1',
         title: 'Morning News Update',
         thumbnailURL: 'https://picsum.photos/id/1015/320/180',
-        videoStreamURL: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u890',
+        videoStreamURL: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
         category: 'news',
     },
     {
