@@ -70,10 +70,14 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     titleText: {
-        color: '#888',
+        color: '#dbdbdb',
         fontSize: 18,
         marginTop: 8,
-        fontWeight: '500'
+        fontWeight: '500',
+        shadowColor: '#000',
+        shadowOpacity: 0.9,
+        shadowRadius: 0.5,
+        shadowOffset: { width: 1.5, height: 1.5 }
     },
     titleTextFocused: {
         color: '#ffffff',
