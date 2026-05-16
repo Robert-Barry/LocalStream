@@ -11,7 +11,7 @@ import {
     StyleSheet, 
     useColorScheme 
 } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState } from 'react';
 import { Stack } from 'expo-router';
 import { SideNavigation } from '@/components/SideNavigation';
@@ -57,16 +57,15 @@ export default function RootLayout() {
                     { Platform.OS === 'ios' || !Platform.isTV ? <AnimatedSplashOverlay /> : null }
 
                     {/* Main TV Layout Structure */}
-                    <View style={styles.tvContainer}>
+                    <SafeAreaView style={styles.tvContainer}>
                         <View style={styles.sideNavPlaceholder}>
                             <SideNavigation />
                         </View>
 
                         <View style={styles.mainContent}>
-                            {/* Slot renders the current page based on the route */}
                             <Stack screenOptions={{ headerShown: false }} />
                         </View>
-                    </View>
+                    </SafeAreaView>
                 </ThemeProvider>
             </SafeAreaProvider>
         </QueryClientProvider>
